@@ -25,7 +25,10 @@ public class SW5986_V2 {
 
 	static int combination(int[] pn, int N) {
 		int cnt = 0;
-		// 201
+		// 201(3) = A <= B <= C
+		//         31
+		//      170(2)   57 
+		//          113(1)    C
 		for (int i = 0; i < pn.length; i++) {
 			if (pn[i] >= N) {
 				break;
@@ -34,6 +37,7 @@ public class SW5986_V2 {
 				if (pn[i] + pn[j] >= N) {
 					break;
 				}
+				// 43        997 = 954
 				for (int k = j; k < pn.length; k++) {
 					if (pn[i] + pn[j] + pn[k] == N) {
 						cnt++;
